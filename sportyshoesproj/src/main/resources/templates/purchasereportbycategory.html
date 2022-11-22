@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" th:href="@{/styles.css}" />
+</head>
+<body>
+<div class="heading">
+	<center>Sporty Shoes</center>
+</div>
+<div class = "body-center">
+	<center>
+	<form action = "#" th:action = "@{/purchasereportbycategory}" method = "post">
+		Select Category: <select th:name = "id">
+			<option th:each = "ctg : ${categoryList}" th:value="${ctg.categoryId}" th:text = "${ctg.categoryName}">
+		</select>
+		<input type = "submit" value = "submit"/>
+	</form>
+	</center>
+</div>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" th:href="@{/styles.css}" />
+</head>
+<body>
+<div class="heading">
+	<center>Sporty Shoes</center>
+</div>
+<div class = "body-center">
+	<center>
+	<p th:text = "${user != null} ? ${user.username}+' user exists' : 'Not found'" ></p>
+	<a th:href = "@{/adminpage}">Admin page</a>
+	</center>
+</div>
+</body>
+</html>

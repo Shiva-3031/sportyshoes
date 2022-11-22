@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" th:href="@{/styles.css}" />
+</head>
+<body>
+<div class="heading">
+	<center>Sporty Shoes</center>
+</div>
+<div class = "body-center">
+	<center>
+	<table border = "1">
+    <tr>
+        <th>Purchase ID</th>
+        <th>User Name</th>
+        <th>Product Name</th>
+        <th>Product Category</th>
+        <th>Date</th>
+    </tr>
+    <tr th:if="${datelist.empty}">
+            <td colspan="2"> No Books Available </td>
+    </tr>
+    <tr th:each="list : ${datelist}">
+        <td th:text="${list.purchaseId}"></td>
+        <td th:text="${list.purchaseUsername}"></td>
+        <td th:text="${list.product.productName}"></td>
+        <td th:text="${list.product.productCategoryName}"></td>
+        <td th:text="${list.date}"></td>
+    </tr>
+	</table>
+	</center>
+</div>
+</body>
+</html>

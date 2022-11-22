@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" th:href="@{/styles.css}" />
+</head>
+<body>
+<div class="heading">
+	<center>Sporty Shoes</center>
+</div>
+<div class = "body-center">
+	<center>
+	Users:<br/>
+	<table border = "1">
+            <tr>
+              <th>User Id</th>
+              <th>User Name</th>
+            </tr>
+            <tr th:each="user : ${userlist}" th:object = "${editproduct}">
+              <td th:text="${user.userId}"></td>
+              <td th:text="${user.username}"></td>
+            </tr>
+    </table>
+	<form action = "#" th:action = "@{/searchuserform}" method = "post">
+		User Name: <input type = "text" th:name = "username" />
+		<input type = "submit" value = "submit">
+	</form>
+	</center>
+</div>
+</body>
+</html>

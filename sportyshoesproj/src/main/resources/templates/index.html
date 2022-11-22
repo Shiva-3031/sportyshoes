@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" th:href="@{/styles.css}" />
+</head>
+<body>
+<div class="heading">
+	<center>Sporty Shoes</center>
+</div>
+<div class = "body-center">
+	<center>
+		<form action = "#" th:action = "@{/index}" method = "post">
+			username : <input type = "text" th:name = "username" />
+			<br/>
+			password : <input type = "password" th:name = "password" />
+			<br/>
+			<input type = "submit" value = "submit" />
+		</form>
+		<a th:href = "@{/resetpassword}">Reset Password</a>
+		<p th:text="${error}" ></p>
+		<p th:text="${message}" ></p>
+	</center>
+</div>
+</body>
+</html>

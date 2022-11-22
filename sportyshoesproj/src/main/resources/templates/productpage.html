@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" th:href="@{/styles.css}" />
+</head>
+<body>
+<div class="heading">
+	<center>Sporty Shoes</center>
+</div>
+<div class = "body-center">
+	<center>
+	<div th:if="${ not#lists.isEmpty(productList)}">
+          <table border = "1">
+            <tr>
+              <th>Product Id</th>
+              <th>Product Name</th>
+              <th>Product Category</th>
+            </tr>
+            <tr th:each="product : ${productList}" th:object = "${editproduct}">
+              <td th:text="${product.productId}"></td>
+              <td th:text="${product.productName}"></td>
+              <td th:text="${product.productCategoryName}"></td>
+              <td><a th:href = "@{/editproductform/{productid}(productid = ${product.productId})}">Edit</a></td>
+              <td><a th:href = "@{/deleteproductform/{productid}(productid = ${product.productId})}">Delete</a></td>  
+            </tr>
+          </table>
+    </div>
+    <div th:if="${ #lists.isEmpty(productList)}"> No products found</div>
+    <div>
+    	<a th:href = "@{/productform}">Add new product</a><br/>
+    </div>
+    </center>
+</div>
+</body>
+</html>
